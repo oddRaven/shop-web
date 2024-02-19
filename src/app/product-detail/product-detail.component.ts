@@ -22,14 +22,14 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const guid = routeParams.get('guid');
+    const id = routeParams.get('id');
 
-    if (guid == null) {
+    if (id == null) {
       window.location.href = '/';
     }
 
     this.httpClient
-      .get<IProduct>(`https://localhost:7250/api/product/${guid}`)
+      .get<IProduct>(`https://localhost:7250/api/product/${id}`)
       .subscribe((data: IProduct) => {
         this.product = data;
       });

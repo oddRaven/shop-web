@@ -24,7 +24,7 @@ export class ProductsOverviewComponent implements OnInit {
       });
   }
 
-  public goToDetail(guid: string) {
-    window.location.href = `/product/${guid}`;
+  public goToDetail(id: number) {
+    window.location.href = `/product/${id}`;
   }
 }
