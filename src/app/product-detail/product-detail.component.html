@@ -1,0 +1,14 @@
+@if (product != null) {
+    <h2>{{product.title}}</h2>
+    <a class="back" href="/">Terug naar overzicht</a>
+    <div class="content">
+        <div class="characteristics">
+            <p>{{ product.description }}</p>
+            <p class="price">Prijs: {{ product.price | currency: 'EUR' }}</p>
+            <p class="storage">{{ product.storageAmount }} exemplaren in opslag.</p>
+        </div>
+        <div class="image">
+            <img [src]="[ product.imageUrl != null ? product.imageUrl : '../../assets/placeholder.jpg' ]">
+        </div>
+    </div>
+}

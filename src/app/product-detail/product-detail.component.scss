@@ -1,0 +1,29 @@
+h2 {
+    text-align: center;
+}
+
+.back {
+    padding: 5px;
+}
+
+.content {
+    display: flex;
+
+    .characteristics {
+        padding: 10px;
+        flex: 1;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+        height: 320px;
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+}

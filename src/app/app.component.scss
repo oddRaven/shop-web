@@ -1,0 +1,34 @@
+.main {
+    max-width: 1000px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    header {
+        height: 70px;
+
+        a {
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+
+            h1 {
+                cursor: pointer;
+                margin: 0px;
+            }
+        }
+    }
+
+    .content {
+        flex: 1;
+        background: #fafafa;
+    }
+
+    footer {
+        height: 20px;
+        padding: 5px;
+        font-size: 12px;
+        text-align: center;
+    }
+}
