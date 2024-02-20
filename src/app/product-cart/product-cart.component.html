@@ -1,4 +1,6 @@
 @if (product != null) {
+    <div class="cart-icon">🛒</div>
+
     @if (product.cartAmount == 0) {
         <div class="button empty-cart" (click)="addToCart(1)">In winkelwagen</div>
     }

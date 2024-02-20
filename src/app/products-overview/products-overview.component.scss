@@ -1,3 +1,5 @@
+@import '../shared/variables';
+
 h2 {
     text-align: center;
 }
@@ -23,12 +25,28 @@ h2 {
 
         img {
             width: 200px;
-            height: auto;
+            height: 200px;
             border-radius: 10px;
         }
         
         .title {
             padding: 5px;
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .products {
+        padding: 5px 0px;
+
+        .product {
+            width: 160px;
+            height: 180px;
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
         }
     }
 }

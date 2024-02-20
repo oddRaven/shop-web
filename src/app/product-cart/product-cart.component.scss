@@ -1,13 +1,14 @@
-$width: 140px;
-
 :host {
-    width: $width;
     display: flex;
+
+    .cart-icon {
+        font-size: 25px;
+    }
 
     .empty-cart {
         text-align: center;
         border-radius: 5px;
-        width: $width;
+        width: 140px;
     }
 
     .button {

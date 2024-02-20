@@ -1,3 +1,5 @@
+@import '../shared/variables';
+
 h2 {
     text-align: center;
 }
@@ -30,6 +32,16 @@ h2 {
         img {
             width: 300px;
             height: 300px;
+        }
+    }
+}
+
+@media (max-width: $mobile-width){
+    .content {
+        flex-direction: column-reverse;
+
+        .image {
+            width: 100%;
         }
     }
 }
