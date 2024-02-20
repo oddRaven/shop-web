@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 
 import { IProduct } from '../models/product';
+import { ProductService } from '../services/product/product.service';
 
 @Component({
   selector: 'app-product-cart',
@@ -14,15 +14,13 @@ import { IProduct } from '../models/product';
 export class ProductCartComponent {
   @Input() product!: IProduct;
 
-  constructor(private httpClient : HttpClient){}
+  constructor(private productService : ProductService){}
 
   public addToCart(amount : number) {
     this.product.cartAmount += amount;
 
-    let url = 'https://localhost:7250/api/product/' + this.product.id;
-
-    this.httpClient
-      .put<IProduct>(url, this.product)
+    this.productService
+      .update(this.product)
       .subscribe(data => {
         this.product.cartAmount = data.cartAmount;
         this.product.storageAvailableAmount = data.storageAvailableAmount;

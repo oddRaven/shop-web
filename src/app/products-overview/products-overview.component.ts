@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 
 import { IProduct } from '../models/product';
+import { ProductService } from '../services/product/product.service';
 
 @Component({
   selector: 'app-products-overview',
@@ -14,11 +14,11 @@ import { IProduct } from '../models/product';
 export class ProductsOverviewComponent implements OnInit {
   products: IProduct[] = [];
 
-  constructor (private httpClient : HttpClient) {}
+  constructor (private productService : ProductService) {}
 
   ngOnInit(): void {
-    this.httpClient
-      .get<IProduct[]>("https://localhost:7250/api/product")
+    this.productService
+      .getAll()
       .subscribe((data: IProduct[]) => {
         this.products = data;
       });

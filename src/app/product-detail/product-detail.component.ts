@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 
 import { ProductCartComponent } from '../product-cart/product-cart.component';
 import { IProduct } from '../models/product';
+import { ProductService } from '../services/product/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -18,19 +18,21 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute, 
-    private httpClient : HttpClient){
+    private productService : ProductService){
   }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const id = routeParams.get('id');
 
-    if (id == null) {
+    if (id == null || isNaN(parseInt(id))) {
       window.location.href = '/';
     }
 
-    this.httpClient
-      .get<IProduct>(`https://localhost:7250/api/product/${id}`)
+    const productId: number = parseInt(id!);
+
+    this.productService
+      .get(productId)
       .subscribe((data: IProduct) => this.product = data);
   }
 }
