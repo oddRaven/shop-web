@@ -1,0 +1,35 @@
+$width: 140px;
+
+:host {
+    width: $width;
+    display: flex;
+
+    .empty-cart {
+        text-align: center;
+        border-radius: 5px;
+        width: $width;
+    }
+
+    .button {
+        cursor: pointer;
+        background: orange;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        min-width: 40px;
+
+        &.left {
+            border-radius: 5px 0px 0px 5px;
+        }
+
+        &.right {
+            border-radius: 0px 5px 5px 0px;
+        }
+    }
+
+    input {
+        width: 60px;
+        text-align: center;
+    }
+}

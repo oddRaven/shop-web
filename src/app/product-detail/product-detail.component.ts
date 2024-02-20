@@ -3,12 +3,13 @@ import { CurrencyPipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
+import { ProductCartComponent } from '../product-cart/product-cart.component';
 import { IProduct } from '../models/product';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [ CurrencyPipe ],
+  imports: [ CurrencyPipe, ProductCartComponent ],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss'
 })

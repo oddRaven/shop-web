@@ -6,6 +6,7 @@
             <p>{{ product.description }}</p>
             <p class="price">Prijs: {{ product.price | currency: 'EUR' }}</p>
             <p class="storage">{{ product.storageAmount }} exemplaren in opslag.</p>
+            <app-product-cart [product]="product"></app-product-cart>
         </div>
         <div class="image">
             <img [src]="[ product.imageUrl != null ? product.imageUrl : '../../assets/placeholder.jpg' ]">

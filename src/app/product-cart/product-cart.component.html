@@ -1,0 +1,10 @@
+@if (product != null) {
+    @if (product.cartAmount == 0) {
+        <div class="button empty-cart" (click)="addToCart(1)">In winkelwagen</div>
+    }
+    @else {
+        <div class="button left" (click)="addToCart(-1)">➖</div>
+        <input type="text" inputmode="numeric" readonly="readonly" [value]="product.cartAmount">
+        <div class="button right" (click)="addToCart(1)">➕</div>
+    }
+}
