@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { environment } from '../../../environments/environment';
 import { IProduct } from '../../models/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private apiProductUrl : string = 'https://localhost:7250/api/product'
+  private apiProductUrl : string = `${environment.apiUrl}/product`
 
   constructor(private httpClient : HttpClient) { }
 
@@ -25,7 +26,7 @@ export class ProductService {
   }
 
   public update(product : IProduct) : Observable<IProduct> {
-    let url = `https://localhost:7250/api/product/${product.id}`;
+    let url = `${this.apiProductUrl}/${product.id}`;
 
     return this.httpClient
       .put<IProduct>(url, product)

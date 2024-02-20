@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { environment } from '../environments/environment';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -9,5 +11,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'timo-shop-web';
+  title = environment.title;
 }
