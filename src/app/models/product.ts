@@ -5,5 +5,6 @@ export interface IProduct {
     price: string;
     imageUrl: string;
     storageAmount: number;
+    storageAvailableAmount: number;
     cartAmount: number;
 }

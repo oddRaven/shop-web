@@ -4,8 +4,12 @@
     <div class="content">
         <div class="characteristics">
             <p>{{ product.description }}</p>
-            <p class="price">Prijs: {{ product.price | currency: 'EUR' }}</p>
-            <p class="storage">{{ product.storageAmount }} exemplaren in opslag.</p>
+            <p class="price">
+                <span class="bold">Prijs:</span> {{ product.price | currency: 'EUR' }}
+            </p>
+            <p class="storage">
+                <span class="bold">Beschikbaarheid:</span> {{ product.storageAvailableAmount }} exemplaren van {{ product.storageAmount }} in opslag.
+            </p>
             <app-product-cart [product]="product"></app-product-cart>
         </div>
         <div class="image">
