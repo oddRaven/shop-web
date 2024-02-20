@@ -1,8 +1,12 @@
-# TimoShopWeb
+# Web Shop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
 
-## Development server
+## Development
+
+Run `npm i` to install all Node packages.
+
+Run `cp src/environments/environment.ts src/environments/environment.develop.ts` to create a development environment file. 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
