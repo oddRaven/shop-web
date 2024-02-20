@@ -21,7 +21,11 @@ export class ProductCartComponent {
 
     let url = 'https://localhost:7250/api/product/' + this.product.id;
 
-    this.httpClient.put<IProduct>(url, this.product.cartAmount)
-        .subscribe(data => this.product.cartAmount = data.cartAmount);
+    this.httpClient
+      .put<IProduct>(url, this.product.cartAmount)
+      .subscribe(data => {
+        this.product.cartAmount = data.cartAmount;
+        this.product.storageAvailableAmount = data.storageAvailableAmount;
+      });
   }
 }

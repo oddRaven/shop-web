@@ -31,8 +31,6 @@ export class ProductDetailComponent implements OnInit {
 
     this.httpClient
       .get<IProduct>(`https://localhost:7250/api/product/${id}`)
-      .subscribe((data: IProduct) => {
-        this.product = data;
-      });
+      .subscribe((data: IProduct) => this.product = data);
   }
 }
