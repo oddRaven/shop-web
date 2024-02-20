@@ -19,6 +19,7 @@
         align-items: center;
         height: 40px;
         min-width: 40px;
+        user-select: none;
 
         &.left {
             border-radius: 5px 0px 0px 5px;

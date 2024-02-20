@@ -22,7 +22,7 @@ export class ProductCartComponent {
     let url = 'https://localhost:7250/api/product/' + this.product.id;
 
     this.httpClient
-      .put<IProduct>(url, this.product.cartAmount)
+      .put<IProduct>(url, this.product)
       .subscribe(data => {
         this.product.cartAmount = data.cartAmount;
         this.product.storageAvailableAmount = data.storageAvailableAmount;
