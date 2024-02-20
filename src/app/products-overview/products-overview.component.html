@@ -1,8 +1,8 @@
 <h2>Producten</h2>
 
 <div class="products">
-    <div *ngFor="let product of products" class="product" (click)="goToDetail(product.id)">
+    <a *ngFor="let product of products" class="product" [href]="'/product/' + product.id">
         <img [src]="[ product.imageUrl != null ? product.imageUrl : '../../assets/placeholder.jpg' ]">
         <div class="title">{{ product.title }}</div>
-    </div>
+    </a>
 </div>

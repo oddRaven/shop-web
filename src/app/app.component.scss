@@ -7,6 +7,8 @@
 
     header {
         height: 70px;
+        display: flex;
+        align-items: center;
 
         a {
             text-decoration: none;
@@ -26,9 +28,10 @@
     }
 
     footer {
-        height: 20px;
-        padding: 5px;
+        height: 26px;
         font-size: 12px;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

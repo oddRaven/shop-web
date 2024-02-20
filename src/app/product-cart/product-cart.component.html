@@ -2,11 +2,11 @@
     <div class="cart-icon">🛒</div>
 
     @if (product.cartAmount == 0) {
-        <div class="button empty-cart" (click)="addToCart(1)">In winkelwagen</div>
+        <div class="button empty-cart" tabindex="0" (click)="addToCart(1)" (keyup.enter)="addToCart(1)">In winkelwagen</div>
     }
     @else {
-        <div class="button left" (click)="addToCart(-1)">➖</div>
+        <div class="button left" tabindex="0" (click)="addToCart(-1)" (keyup.enter)="addToCart(-1)">➖</div>
         <input type="text" inputmode="numeric" readonly="readonly" [value]="product.cartAmount">
-        <div class="button right" (click)="addToCart(1)">➕</div>
+        <div class="button right" tabindex="0" (click)="addToCart(1)" (keyup.enter)="addToCart(1)">➕</div>
     }
 }

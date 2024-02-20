@@ -1,3 +1,4 @@
 export const environment = {
-    apiUrl: 'https://localhost/api'
+    apiUrl: 'https://localhost/api',
+    title: 'Webshop'
 };
